@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/<database-name> # Добавить имя базы вместо <database-name>
+    username: <username>                                  # Добавить имя пользователя вместо <username>
+    password: <password>                                  # Добавить пароль <password>
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+    generate-ddl: true
+    hibernate.ddl-auto: update
