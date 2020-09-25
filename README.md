@@ -1,13 +1,13 @@
-#Тестовое задание
+# РўРµСЃС‚РѕРІРѕРµ Р·Р°РґР°РЅРёРµ
 
-###Запуск приложения
-1. Создать базу данных PostgreSQL используя команду `CREATE DATABASE <name>;`
-2. Заполнить данные в [application.yml](src/main/resources/application.yml)
-3. Запустить приложение с помощью команды `mvn spring-boot:run`
+### Р—Р°РїСѓСЃРє РїСЂРёР»РѕР¶РµРЅРёСЏ
+1. РЎРѕР·РґР°С‚СЊ Р±Р°Р·Сѓ РґР°РЅРЅС‹С… PostgreSQL РёСЃРїРѕР»СЊР·СѓСЏ РєРѕРјР°РЅРґСѓ `CREATE DATABASE <name>;`
+2. Р—Р°РїРѕР»РЅРёС‚СЊ РґР°РЅРЅС‹Рµ РІ [application.yml](src/main/resources/application.yml)
+3. Р—Р°РїСѓСЃС‚РёС‚СЊ РїСЂРёР»РѕР¶РµРЅРёРµ СЃ РїРѕРјРѕС‰СЊСЋ РєРѕРјР°РЅРґС‹ `mvn spring-boot:run`
 
-###Примеры запросов
+### РџСЂРёРјРµСЂС‹ Р·Р°РїСЂРѕСЃРѕРІ
 
-Добавление пользователя
+Р”РѕР±Р°РІР»РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 
 ```shell script
 curl --header "Content-Type: application/json" \
@@ -25,17 +25,17 @@ curl --header "Content-Type: application/json" \
      http://localhost:8080/api/v1/users
 ```
 
-Удаление пользователя
+РЈРґР°Р»РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 ```shell script
 curl -X DELETE http://localhost:8080/api/v1/users/1
 ```
 
-Получить конкретного пользователя
+РџРѕР»СѓС‡РёС‚СЊ РєРѕРЅРєСЂРµС‚РЅРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 ```shell script
 curl -X GET http://localhost:8080/api/v1/users/1
 ```
 
-Список пользователей
+РЎРїРёСЃРѕРє РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№
 ```shell script
 curl -X GET http://localhost:8080/api/v1/users
 ```
