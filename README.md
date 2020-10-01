@@ -1,23 +1,13 @@
-# Тестовое задание
+# РўРµСЃС‚РѕРІРѕРµ Р·Р°РґР°РЅРёРµ
 
-### Запуск приложения
-- Создать базу данных PostgreSQL используя команду `CREATE DATABASE <name>;`
-- Добавить пользователей последовательно запустив [schema.sql](scripts/schema.sql) и [data.sql](scripts/data.sql) используя
-команды(в корне проекта): 
-```shell script
-psql -U <username> -d <database-name> -f scripts/schema.sql
-psql -U <username> -d <database-name> -f scripts/data.sql
-```
-- Заполнить данные в [application.yml](src/main/resources/application.yml)
-- Запустить приложение с помощью команды `mvn spring-boot:run`
+### Р—Р°РїСѓСЃРє РїСЂРёР»РѕР¶РµРЅРёСЏ
+1. РЎРѕР·РґР°С‚СЊ Р±Р°Р·Сѓ РґР°РЅРЅС‹С… PostgreSQL РёСЃРїРѕР»СЊР·СѓСЏ РєРѕРјР°РЅРґСѓ `CREATE DATABASE <name>;`
+2. Р—Р°РїРѕР»РЅРёС‚СЊ РґР°РЅРЅС‹Рµ РІ [application.yml](src/main/resources/application.yml)
+3. Р—Р°РїСѓСЃС‚РёС‚СЊ РїСЂРёР»РѕР¶РµРЅРёРµ СЃ РїРѕРјРѕС‰СЊСЋ РєРѕРјР°РЅРґС‹ `mvn spring-boot:run`
 
-### Данные для входа
-- Admin: `username: admin` `password: admin`
-- User: `username: user` `password: user`
+### РџСЂРёРјРµСЂС‹ Р·Р°РїСЂРѕСЃРѕРІ
 
-### Примеры запросов
-
-Добавление пользователя
+Р”РѕР±Р°РІР»РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 
 ```shell script
 curl --header "Content-Type: application/json" \
@@ -32,20 +22,20 @@ curl --header "Content-Type: application/json" \
             "hireDate": "2020-04-25",
             "active": true
             }' \
-     http://localhost:8080/api/v1/employees
+     http://localhost:8080/api/v1/users
 ```
 
-Удаление пользователя
+РЈРґР°Р»РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 ```shell script
-curl -X DELETE http://localhost:8080/api/v1/employees/1
+curl -X DELETE http://localhost:8080/api/v1/users/1
 ```
 
-Получить конкретного пользователя
+РџРѕР»СѓС‡РёС‚СЊ РєРѕРЅРєСЂРµС‚РЅРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 ```shell script
-curl -X GET http://localhost:8080/api/v1/employees/1
+curl -X GET http://localhost:8080/api/v1/users/1
 ```
 
-Список пользователей
+РЎРїРёСЃРѕРє РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№
 ```shell script
-curl -X GET http://localhost:8080/api/v1/employees
+curl -X GET http://localhost:8080/api/v1/users
 ```
