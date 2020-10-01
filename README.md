@@ -1,11 +1,21 @@
-#Тестовое задание
+# Тестовое задание
 
-###Запуск приложения
-1. Создать базу данных PostgreSQL используя команду `CREATE DATABASE <name>;`
-2. Заполнить данные в [application.yml](src/main/resources/application.yml)
-3. Запустить приложение с помощью команды `mvn spring-boot:run`
+### Запуск приложения
+- Создать базу данных PostgreSQL используя команду `CREATE DATABASE <name>;`
+- Добавить пользователей последовательно запустив [schema.sql](scripts/schema.sql) и [data.sql](scripts/data.sql) используя
+команды(в корне проекта): 
+```shell script
+psql -U <username> -d <database-name> -f scripts/schema.sql
+psql -U <username> -d <database-name> -f scripts/data.sql
+```
+- Заполнить данные в [application.yml](src/main/resources/application.yml)
+- Запустить приложение с помощью команды `mvn spring-boot:run`
 
-###Примеры запросов
+### Данные для входа
+- Admin: `username: admin` `password: admin`
+- User: `username: user` `password: user`
+
+### Примеры запросов
 
 Добавление пользователя
 
@@ -22,20 +32,20 @@ curl --header "Content-Type: application/json" \
             "hireDate": "2020-04-25",
             "active": true
             }' \
-     http://localhost:8080/api/v1/users
+     http://localhost:8080/api/v1/employees
 ```
 
 Удаление пользователя
 ```shell script
-curl -X DELETE http://localhost:8080/api/v1/users/1
+curl -X DELETE http://localhost:8080/api/v1/employees/1
 ```
 
 Получить конкретного пользователя
 ```shell script
-curl -X GET http://localhost:8080/api/v1/users/1
+curl -X GET http://localhost:8080/api/v1/employees/1
 ```
 
 Список пользователей
 ```shell script
-curl -X GET http://localhost:8080/api/v1/users
+curl -X GET http://localhost:8080/api/v1/employees
 ```
