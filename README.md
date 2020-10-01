@@ -1,9 +1,19 @@
 # Тестовое задание
 
 ### Запуск приложения
-1. Создать базу данных PostgreSQL используя команду `CREATE DATABASE <name>;`
-2. Заполнить данные в [application.yml](src/main/resources/application.yml)
-3. Запустить приложение с помощью команды `mvn spring-boot:run`
+- Создать базу данных PostgreSQL используя команду `CREATE DATABASE <name>;`
+- Добавить пользователей последовательно запустив [schema.sql](scripts/schema.sql) и [data.sql](scripts/data.sql) используя
+команды(в корне проекта): 
+```shell script
+psql -U <username> -d <database-name> -f scripts/schema.sql
+psql -U <username> -d <database-name> -f scripts/data.sql
+```
+- Заполнить данные в [application.yml](src/main/resources/application.yml)
+- Запустить приложение с помощью команды `mvn spring-boot:run`
+
+### Данные для входа
+- Admin: `username: admin` `password: admin`
+- User: `username: user` `password: user`
 
 ### Примеры запросов
 
