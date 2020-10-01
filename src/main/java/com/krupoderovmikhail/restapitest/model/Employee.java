@@ -2,8 +2,7 @@ package com.krupoderovmikhail.restapitest.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.krupoderovmikhail.restapitest.enums.Gender;
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
@@ -17,10 +16,12 @@ import java.util.Date;
  * @author Krupoderov Mikhail
  */
 @Entity
-@Table(name = "users")
-@Data
+@Table(name = "employee")
+@Getter
+@Setter
 @AllArgsConstructor
-public class User {
+@NoArgsConstructor
+public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -57,8 +58,4 @@ public class User {
     @NotNull
     @Past(message = "Hire date cannot be greater than the current one")
     private Date hireDate;
-
-    @Column(name = "active")
-    @NotNull(message = "Please provide an active")
-    private Boolean active;
 }
